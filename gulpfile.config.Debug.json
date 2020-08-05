@@ -1,0 +1,21 @@
+{
+	"websiteRoot": "D:\\Projects\\SUGDK\\wwwroot\\sug.demo",
+	"buildConfiguration": "Debug",
+	"runCleanBuilds": false,
+	"projects": [
+		"./**/*Foundation.*.csproj",
+		"./**/*Feature.*.csproj",
+		"./**/*Project.*.csproj"
+	],
+	"filesToRemoveBefore": [
+		"/App_Config/Include/Feature",
+		"/App_Config/Include/Foundation",
+		"/App_Config/Include/Project",
+		"/bin/Sug.*.dll",
+		"/bin/Sug.*.pdb",
+		"/bin/Sug.*.xml"
+	],
+	"filesToRemoveAfter": [],
+	"deployContent": true,
+	"deploySerializedItems": false
+}

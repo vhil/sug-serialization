@@ -1,0 +1,38 @@
+{
+	"websiteRoot": "D:\\Projects\\sc910\\wwwroot\\sc910.sc",
+	"buildConfiguration": "Debug",
+	"runCleanBuilds": false,
+	"projects": [
+		"./**/*Foundation.*.csproj",
+		"./**/*Feature.*.csproj",
+		"./**/*Project.*.csproj"
+	],
+	"filesToRemoveBefore": [
+		"/App_Config/Include/Feature",
+		"/App_Config/Include/Foundation",
+		"/App_Config/Include/Project",
+		"/bin/Pintle.*.dll",
+		"/bin/Pintle.*.pdb",
+		"/bin/Pintle.*.xml",
+		"/bin/XwrapDemo.*.dll",
+		"/bin/XwrapDemo.*.pdb",
+		"/bin/XwrapDemo.*.xml"
+	],
+	"filesToRemoveAfter": [],
+	"otherFiles": [
+		{
+			"src": "./src/Project/Website/code/css/**/*",
+			"dest": "D:\\Projects\\sc910\\wwwroot\\sc910.sc/css"
+		},
+		{
+			"src": "./src/Project/Website/code/js/**/*",
+			"dest": "D:\\Projects\\sc910\\wwwroot\\sc910.sc/js"
+		},
+		{
+			"src": "./src/Project/Website/code/images/**/*",
+			"dest": "D:\\Projects\\sc910\\wwwroot\\sc910.sc/images"
+		}
+	],
+	"deployContent": true,
+	"deploySerializedItems": false
+}

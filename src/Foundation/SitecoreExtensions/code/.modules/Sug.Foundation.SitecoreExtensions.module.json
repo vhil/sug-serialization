@@ -1,0 +1,12 @@
+{
+	"namespace": "Sug.Foundation.SitecoreExtensions",
+	"references": "",
+	"items": {
+		"includes": [
+			{
+				"name": "Templates",
+				"path": "/sitecore/templates/Foundation/SitecoreExtensions"
+			}
+		]
+	}
+}
