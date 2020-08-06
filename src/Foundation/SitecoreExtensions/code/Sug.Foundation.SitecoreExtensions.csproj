@@ -90,11 +90,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\ServicesConfigurator.cs" />
-    <Compile Include="Extensions\StaticFieldFormattersFactory.cs" />
-    <Compile Include="Extensions\ItemExtensions.cs" />
-    <Compile Include="Extensions\MockedFactory.cs" />
     <Compile Include="Extensions\ServiceCollectionExtensions.cs" />
-    <Compile Include="Extensions\SitecoreHelperExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="xWrapSitecoreTemplates.cs">
       <AutoGen>True</AutoGen>

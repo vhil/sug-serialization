@@ -6,6 +6,10 @@
 			{
 				"name": "Templates",
 				"path": "/sitecore/templates/Foundation/SitecoreExtensions"
+			},
+			{
+				"name": "Renderings",
+				"path": "/sitecore/layout/Renderings/Foundation/SitecoreExtensions"
 			}
 		]
 	}
