@@ -12,6 +12,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".solution files", ".solutio
 		gulpfile.js = gulpfile.js
 		NuGet.config = NuGet.config
 		package.json = package.json
+		codegen\xWrapCodeGeneration.tt = codegen\xWrapCodeGeneration.tt
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Project", "Project", "{A81443C3-FFEC-4C47-8FE7-7EEF0D88B553}"

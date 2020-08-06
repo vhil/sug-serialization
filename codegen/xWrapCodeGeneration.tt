@@ -1,0 +1,587 @@
+﻿<#@ assembly name="%UserProfile%\.nuget\packages\sitecore.kernel\10.0.0\lib\net48\Sitecore.Kernel.dll" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="System.Xml" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Text.RegularExpressions" #>
+<#@ import namespace="System.Xml" #>
+<#@ import namespace="Sitecore" #>
+<#@ import namespace="Sitecore.Abstractions.Serialization" #>
+<#@ import namespace="Sitecore.Data.Serialization.Yaml" #>
+<#@ import namespace="Sitecore.Data.Serialization.Yaml.Formatting" #>
+using Sitecore.Data;
+using Sitecore.Data.Items;
+using Sitecore.Mvc.Presentation;
+using Xwrap;
+using Xwrap.FieldWrappers.Abstractions;
+using Xwrap.Mvc.RenderingParameters;
+<# 
+try { foreach (var data in GetTemplateData().ToArray()) { var template = data.Template; var fields = data.Fields; if (template.Name == "$name") { continue; }
+#>
+
+#region <#= template.Path#>
+
+namespace <#=BaseNamespace#>.SitecoreTemplates
+{
+<#if (!IsRenderingParameters(template)) { #>
+	/// <summary>
+	/// Item wrapper for items of template '<#= template.Name#>'.
+	/// Template ID: <#= template.Id.ToString("B").ToUpper()#>.
+	/// Template path: <#= template.Path#>.
+	/// </summary>
+	[TemplateId(Constants.TemplateIdString)]
+    // ReSharper disable once InconsistentNaming
+	// ReSharper disable once PartialTypeWithSinglePart
+	public partial class <#= GetClassName(template)#>Item : ItemWrapper
+	{
+		public <#= GetClassName(template)#>Item(Item item) : base(item)
+		{
+		}
+<#foreach(var field in fields) { #>
+
+		/// <summary>
+		/// A wrapped '<#=GetFieldType(field)#>' field for item field with name: '<#= field.Name#>'.
+		/// <returns><see cref="<#=GetFieldWrapperType(field)#>"/></returns>
+		/// </summary>
+		public <#=GetFieldWrapperType(field)#> <#= GetFieldName(field)#> => this.WrapField<<#=GetFieldWrapperType(field)#>>(FieldNames.<#= GetFieldName(field)#>);
+<#}#>
+
+		public static class Constants
+		{
+			public static readonly TemplateID TemplateId = new TemplateID(new ID(TemplateIdString));
+			public const string TemplateIdString = "<#= template.Id.ToString("B").ToUpper()#>"; 
+		}
+
+<#  if (fields.Any()) { #>
+		public static class FieldNames
+		{
+<#foreach(var field in fields) { #>
+			public const string <#= GetFieldName(field)#> = "<#= field.Name#>"; 
+<#}#>
+		}
+<# } #>
+<#  if (fields.Any()) { #>
+
+		public static class FieldIds
+		{
+<#foreach(var field in fields) { #>
+			public static ID <#= GetFieldName(field)#> = new ID("<#= field.Id.ToString("B").ToUpper()#>"); 
+<#}#>
+		}
+<# } #>
+	}
+<#} else {#>
+	/// <summary>
+	/// Rendering parameters wrapper for template '<#= template.Name#>'.
+	/// Template ID: <#= template.Id.ToString("B").ToUpper()#>.
+	/// Template path: <#= template.Path#>.
+	/// </summary>
+    // ReSharper disable once InconsistentNaming
+	// ReSharper disable once PartialTypeWithSinglePart
+	public partial class <#= GetClassName(template)#> : RenderingParametersWrapper
+	{
+		public <#= GetClassName(template)#>(RenderingParameters parameters) : base(parameters)
+		{
+		}
+<#foreach(var field in fields) { #>
+
+		/// <summary>
+		/// A wrapped '<#=GetFieldType(field)#>' parameter for field with name '<#= field.Name#>'.
+		/// <returns><see cref="<#=GetParameterWrapperType(field)#>"/></returns>
+		/// </summary>
+		public <#=GetParameterWrapperType(field)#> <#=GetFieldName(field)#> => this.<#=GetParamterMethodName(field)#>(FieldNames.<#= GetFieldName(field)#>);
+<#}#>
+<#if (fields.Any()) { #>
+
+		public static class FieldNames
+		{
+<#foreach(var field in fields) { #>
+			public const string <#= GetFieldName(field)#> = "<#= field.Name#>"; 
+<#}#>
+		}
+<#}#>
+		
+		public static class Constants
+		{
+			public static readonly TemplateID TemplateId = new TemplateID(new ID(TemplateIdString));
+			public const string TemplateIdString = "<#= template.Id.ToString("B").ToUpper()#>"; 
+		}
+	}
+<#}#>
+}
+
+#endregion
+<# } 
+} catch{} #>
+<#+
+
+public string GetClassName(IItemData template)  
+{
+    return AsValidWord(template.Name);
+}
+
+public string GetFieldName(IItemData field)  
+{
+    return AsValidWord(field.Name);
+}
+
+public string GetIndexFieldValue(IItemData field)  
+{
+    return field.Name.Replace(" ", "_").ToLowerInvariant();
+}
+
+public bool IsRenderingParameters(IItemData template)
+{
+    return template.SharedFields.First(f => f.FieldId == new Guid("{12C33F3F-86C5-43A5-AEB4-5598CEC45116}")).Value
+		.Contains("{8CA06D6A-B353-44E8-BC31-B528C7306971}");
+}
+
+public string GetFieldType(IItemData field)  
+{
+    return field.SharedFields.First(f => f.FieldId == new Guid("{AB162CC0-DC80-4ABF-8871-998EE5D7BA32}")).Value.ToLowerInvariant();
+}
+
+public string AsValidWord(string part)  
+{
+    part = TitleCase(part);
+    part = part.Replace(" ", "");
+    //part = Regex.Replace(part, "^_", "");
+    part = part.Replace("-", "");
+    while (Regex.IsMatch(part, "^\\d"))
+    {
+        part = Regex.Replace(part, "^1", "One");
+        part = Regex.Replace(part, "^2", "Two");
+        part = Regex.Replace(part, "^3", "Three");
+        part = Regex.Replace(part, "^4", "Four");
+        part = Regex.Replace(part, "^5", "Five");
+        part = Regex.Replace(part, "^6", "Six");
+        part = Regex.Replace(part, "^7", "Seven");
+        part = Regex.Replace(part, "^8", "Eight");
+        part = Regex.Replace(part, "^9", "Nine");
+    }
+    return part;
+}
+
+public string GetParamterMethodName(IItemData field)
+{
+	var fieldWrapperName = GetParameterWrapperType(field);
+	fieldWrapperName = fieldWrapperName.Substring(1, fieldWrapperName.Length - 1);
+	return fieldWrapperName.Replace("Wrapper", "");
+}
+
+public string GetParameterWrapperType(IItemData field)
+{
+	var typeName = GetFieldType(field);
+	var returnType = "string";
+	
+	switch (typeName)
+	{
+		case "checkbox":
+			returnType = "ICheckboxFieldWrapper";
+			break;
+		case "checklist":
+		case "treelist":
+		case "treelist with search":
+		case "treelistex":
+		case "multilist":
+		case "multilist with search":
+		case "multi-root treelist":
+		case "accounts multilist":
+		case "tags":
+			returnType = "IListFieldWrapper";
+			break;
+		case "droplink":
+		case "droptree":
+		case "lui component theme":
+			returnType = "ILinkFieldWrapper";
+			break;
+		case "internal link":
+			returnType = "IInternalLinkFieldWrapper";
+			break;
+		case "text":
+		case "single-line text":
+		case "multi-line text":
+			returnType = "ITextFieldWrapper";
+			break;
+		case "number":
+			returnType = "INumberFieldWrapper";
+			break;
+		case "integer":
+			returnType = "IIntegerFieldWrapper";
+			break;
+		default:
+			returnType = "ITextFieldWrapper";
+			break;
+	}
+
+	return returnType;
+}
+
+public string GetFieldWrapperType(IItemData field)
+{
+	var typeName = GetFieldType(field);
+	var returnType = "string";
+	
+	switch (typeName)
+	{
+		case "checkbox":
+			returnType = "ICheckboxFieldWrapper";
+			break;
+		case "image":
+			returnType = "IImageFieldWrapper";
+			break;
+		case "file":
+			returnType = "IFileFieldWrapper";
+			break;
+		case "date":
+		case "datetime":
+			returnType = "IDateTimeFieldWrapper";
+			break;
+		case "checklist":
+		case "treelist":
+		case "treelist with search":
+		case "treelistex":
+		case "multilist":
+		case "multilist with search":
+		case "multi-root treelist":
+		case "accounts multilist":
+		case "tags":
+			returnType = "IListFieldWrapper";
+			break;
+		case "droplink":
+		case "lui component theme":
+		case "droptree":
+			returnType = "ILinkFieldWrapper";
+			break;
+		case "internal link":
+			returnType = "IInternalLinkFieldWrapper";
+			break;
+		case "general link":
+		case "general link with search":
+			returnType = "IGeneralLinkFieldWrapper";
+			break;
+		case "text":
+		case "single-line text":
+		case "multi-line text":
+			returnType = "ITextFieldWrapper";
+			break;
+		case "rich text":
+			returnType = "IRichTextFieldWrapper";
+			break;
+		case "number":
+			returnType = "INumberFieldWrapper";
+			break;
+		case "integer":
+			returnType = "IIntegerFieldWrapper";
+			break;
+		case "name lookup value list":
+			returnType = "INameLookupValueListFieldWrapper";
+			break;
+		case "name value list":
+			returnType = "INameValueListFieldWrapper";
+			break;
+		default:
+			returnType = "ITextFieldWrapper";
+			break;
+	}
+
+	return returnType;
+}
+
+public static string TitleCase(string word)  
+{
+    word = Regex.Replace(word, "([a-z](?=[A-Z])|[A-Z](?=[A-Z][a-z]))", "$1+");
+    word = System.Globalization.CultureInfo.InvariantCulture.TextInfo.ToTitleCase(word);
+    word = word.Replace("+", "");
+    return word;
+}
+
+public class StaticFieldFormattersFactory : Sitecore.Data.Serialization.Yaml.Formatting.FieldFormattersFactory
+	{
+		private readonly IEnumerable<BaseFieldFormatter> formatters;
+
+		public StaticFieldFormattersFactory(IEnumerable<BaseFieldFormatter> formatters)
+			:base(new MockedFactory())
+		{
+			this.formatters = formatters;
+		}
+
+		public override IEnumerable<BaseFieldFormatter> Create()
+		{
+			return this.formatters;
+		}
+	}
+
+	public class MockedFactory : Sitecore.Abstractions.BaseFactory
+	{
+		public override Sitecore.Web.UI.WebControls.ErrorControl CreateErrorControl(string message, string details)
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public override Sitecore.Xml.XPath.ItemNavigator CreateItemNavigator(Sitecore.Data.Items.Item item)
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public override T CreateObject<T>(System.Xml.XmlNode configNode)
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public override Sitecore.Configuration.ConfigStore GetConfigStore(string configStoreName)
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public override System.Collections.Generic.List<Sitecore.Web.CustomHandler> GetCustomHandlers()
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public override Sitecore.Data.Database GetDatabase(string name)
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public override Sitecore.Data.Database GetDatabase(string name, bool assert)
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public override string[] GetDatabaseNames()
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public override System.Collections.Generic.List<Sitecore.Data.Database> GetDatabases()
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public override Sitecore.Collections.StringDictionary GetDomainMap(string path)
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public override System.Collections.Hashtable GetHashtable(string path, Sitecore.Configuration.Factory.HashKeyType keyType, Sitecore.Configuration.Factory.HashValueType valueType, Sitecore.Configuration.Factory.HashValueFormat format,
+			System.Type dataType)
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public override Sitecore.Data.IDTables.IDTableProvider GetIDTable()
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public override System.Collections.Generic.IComparer<Sitecore.Data.Items.Item> GetItemComparer(Sitecore.Data.Items.Item item)
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public override Sitecore.Links.LinkDatabase GetLinkDatabase()
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public override Sitecore.Data.MasterVariablesReplacer GetMasterVariablesReplacer()
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public override Sitecore.Collections.PerformanceCounterCollection GetPerformanceCounters()
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public override TCollection GetProviders<TProvider, TCollection>(string rootPath, out TProvider defaultProvider)
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public override Sitecore.Data.DataProviders.IRetryable GetRetryer()
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public override Sitecore.Text.Replacer GetReplacer(string name)
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public override Sitecore.Sites.SiteContext GetSite(string siteName)
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public override Sitecore.Web.SiteInfo GetSiteInfo(string siteName)
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public override System.Collections.Generic.List<Sitecore.Web.SiteInfo> GetSiteInfoList()
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public override string[] GetSiteNames()
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public override string GetString(string configPath, bool assert)
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public override Sitecore.Collections.Set<string> GetStringSet(string configPath)
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public override Sitecore.Tasks.TaskDatabase GetArchiveTaskDatabase()
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public override Sitecore.Tasks.TaskDatabase GetTaskDatabase()
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public override object CreateObject(string configPath, bool assert)
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public override object CreateObject(string configPath, string[] parameters, bool assert)
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public override object CreateObject(System.Xml.XmlNode configNode, bool assert)
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public override object CreateObject(System.Xml.XmlNode configNode, string[] parameters, bool assert)
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public override object CreateObject(System.Xml.XmlNode configNode, string[] parameters, bool assert, Sitecore.Configuration.IFactoryHelper helper)
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public override System.Type CreateType(System.Xml.XmlNode configNode, bool assert)
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public override System.Type CreateType(System.Xml.XmlNode configNode, string[] parameters, bool assert)
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public override System.Type FindType(string className, System.Reflection.Assembly assembly)
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public override string GetAttribute(string name, System.Xml.XmlNode node, string[] parameters)
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public override System.Xml.XmlNode GetConfigNode(string xpath)
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public override System.Xml.XmlNode GetConfigNode(string xpath, bool assert)
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public override System.Xml.XmlNodeList GetConfigNodes(string xpath)
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public override void Reset()
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public override System.Xml.XmlDocument GetConfiguration()
+		{
+			throw new System.NotImplementedException();
+		}
+	}
+
+public IEnumerable<TemplateData> GetTemplateData() {  
+    
+
+    var files = Configurations.SelectMany(x => Directory.EnumerateFiles(x, "*.yml", SearchOption.AllDirectories));
+
+    var items = new List<IItemData>();
+
+
+
+	var formatters = new BaseFieldFormatter[]
+	{
+		new Sitecore.Data.Serialization.Yaml.Formatting.XmlFieldFormatter(),
+		new Sitecore.Data.Serialization.Yaml.Formatting.MultilistFormatter(),
+		new Sitecore.Data.Serialization.Yaml.Formatting.CheckboxFieldFormatter()
+	};
+
+		var factory = new StaticFieldFormattersFactory(formatters);
+		var serializer = new YamlItemSerializer(factory);
+		foreach (var file in files)
+		{
+			
+			using (System.IO.TextReader reader = new StreamReader(file))
+			{
+				var item = serializer.Read(reader);
+				items.Add(item);
+			}
+		}
+
+
+    var itemsLookup = items.ToLookup(x => x.ParentId, x => x);
+
+    var templates = items.Where(x => x.TemplateId == Sitecore.TemplateIDs.Template.Guid);
+
+    return templates.Select(template => new TemplateData
+    {
+        Template = template,
+        Fields = GetFields(template.Id, itemsLookup)
+    });
+}
+
+public IList<IItemData> GetSections(Guid templateId, ILookup<Guid, IItemData> lookup)  
+{
+    return lookup[templateId].Where(x => x.TemplateId == Sitecore.TemplateIDs.TemplateSection.Guid).ToList();
+}
+
+public IList<IItemData> GetFields(Guid templateId, ILookup<Guid, IItemData> lookup)  
+{
+    var sectionIds = GetSections(templateId, lookup).Select(x => x.Id);
+    return sectionIds.SelectMany(x => lookup[x].Where(item => item.TemplateId == Sitecore.TemplateIDs.TemplateField.Guid).ToList()).ToList();
+}
+
+public class TemplateData  
+{
+    public IItemData Template { get; set; }
+    public IEnumerable<IItemData> Fields { get; set; }
+}
+
+private string IgnoreNamespacePath { get; set; }  
+private string BaseNamespace { get; set; }  
+private string CustomNamespace { get; set; }  
+private IEnumerable<string> Configurations { get; set; }#>
