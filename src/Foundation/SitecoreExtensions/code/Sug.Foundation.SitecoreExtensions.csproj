@@ -55,7 +55,7 @@
       <Version>2.1.1</Version>
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
-      <Version>12.0.2</Version>
+      <Version>12.0.3</Version>
     </PackageReference>
     <PackageReference Include="Sitecore.Kernel">
       <Version>10.0.0</Version>
@@ -97,15 +97,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>xWrapSitecoreTemplates.tt</DependentUpon>
     </Compile>
-    <Content Include="App_Config\Include\Foundation\Pintle.Foundation.SitecoreExtensions\Serialization.config">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="App_Config\Include\Foundation\Pintle.Foundation.SitecoreExtensions\DependencyInjection.config" />
     <Content Include=".modules\Sug.Foundation.SitecoreExtensions.module.json" />
     <Content Include="xWrapSitecoreTemplates.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>xWrapSitecoreTemplates.cs</LastGenOutput>
     </Content>
+    <Content Include="App_Config\Include\Foundation\Sug.Foundation.SitecoreExtensions\DependencyInjection.config" />
     <None Include="web.config" />
   </ItemGroup>
   <ItemGroup>

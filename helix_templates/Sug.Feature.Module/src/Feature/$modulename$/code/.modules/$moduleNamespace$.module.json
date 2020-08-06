@@ -1,0 +1,16 @@
+{
+	"namespace": "$moduleNamespace$",
+	"references": [ "*Foundation.*" ],
+	"items": {
+		"includes": [
+			{
+				"name": "Templates",
+				"path": "/sitecore/templates/Feature/$moduleName$"
+			},
+			{
+				"name": "Renderings",
+				"path": "/sitecore/layout/Renderings/Feature/$moduleName$"
+			}
+		]
+	}
+}

@@ -1,0 +1,16 @@
+{
+	"namespace": "Sug.Foundation.ErrorHandling",
+	"references": [ "Sug.Foundation.SitecoreExtensions" ],
+	"items": {
+		"includes": [
+			{
+				"name": "Templates",
+				"path": "/sitecore/templates/Foundation/ErrorHandling"
+			},
+			{
+				"name": "Renderings",
+				"path": "/sitecore/layout/Renderings/Foundation/ErrorHandling"
+			}
+		]
+	}
+}

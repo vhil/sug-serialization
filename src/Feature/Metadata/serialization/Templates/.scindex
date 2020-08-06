@@ -1,0 +1,37 @@
+﻿# Do not commit this file to source control or modify it. It is safe to delete; it will recreate itself.
+---
+File: |
+  D:\Projects\SUGDK\sug-serialization\src\Feature\Metadata\serialization\Templates\Metadata\_Metadata\Metadata\Meta title.yml
+ID: "ab300db7-3d19-4e2f-bf52-4bf0b892abc2"
+Parent: "cf5e7daa-f296-4ece-a80d-2efe4852e646"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/Feature/Metadata/_Metadata/Metadata/Meta title
+Signature: Diqzk2VpWd8h23tWnciIRn5hjFcjOLZ/0dNpZHEgTM4=
+Modified: 637323173212708496
+---
+File: |
+  D:\Projects\SUGDK\sug-serialization\src\Feature\Metadata\serialization\Templates\Metadata\_Metadata.yml
+ID: "1f082a45-36f5-4de1-988a-72aac08bd330"
+Parent: "e1e261a8-ed23-4fd4-9163-41d87f319dbc"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/Feature/Metadata/_Metadata
+Signature: U36BdxSejRPXOzlPTAm1UNEDGdeBrJL2WkzDnzmY+8k=
+Modified: 637323173212678563
+---
+File: |
+  D:\Projects\SUGDK\sug-serialization\src\Feature\Metadata\serialization\Templates\Metadata.yml
+ID: "e1e261a8-ed23-4fd4-9163-41d87f319dbc"
+Parent: "8f343079-3cc5-4ef7-bc27-32addb46f45e"
+Template: "0437fee2-44c9-46a6-abe9-28858d9fee8c"
+Path: /sitecore/templates/Feature/Metadata
+Signature: j6fa7MUiZ4isk0zmQYVPFBfxMVH212qP/BpzDQOuLVU=
+Modified: 637323172474580554
+---
+File: |
+  D:\Projects\SUGDK\sug-serialization\src\Feature\Metadata\serialization\Templates\Metadata\_Metadata\Metadata.yml
+ID: "cf5e7daa-f296-4ece-a80d-2efe4852e646"
+Parent: "1f082a45-36f5-4de1-988a-72aac08bd330"
+Template: "e269fbb5-3750-427a-9149-7aa950b49301"
+Path: /sitecore/templates/Feature/Metadata/_Metadata/Metadata
+Signature: vIzcCdKlP3iNS4VWTx637UOxxw/TpGXGuWkC/HNVH2w=
+Modified: 637323173212698492

@@ -1,0 +1,16 @@
+{
+	"namespace": "Sug.Feature.Metadata",
+	"references": [ "*Foundation.*" ],
+	"items": {
+		"includes": [
+			{
+				"name": "Templates",
+				"path": "/sitecore/templates/Feature/Metadata"
+			},
+			{
+				"name": "Renderings",
+				"path": "/sitecore/layout/Renderings/Feature/Metadata"
+			}
+		]
+	}
+}

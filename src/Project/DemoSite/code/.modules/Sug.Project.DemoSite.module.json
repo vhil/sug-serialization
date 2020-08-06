@@ -1,0 +1,16 @@
+{
+	"namespace": "Sug.Project.DemoSite",
+	"references": [ "*Feature.*" ],
+	"items": {
+		"includes": [
+			{
+				"name": "Templates",
+				"path": "/sitecore/templates/Project/DemoSite"
+			},
+			{
+				"name": "Renderings",
+				"path": "/sitecore/layout/Renderings/Project/DemoSite"
+			}
+		]
+	}
+}
