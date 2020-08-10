@@ -1,23 +1,27 @@
 ﻿---
-ID: "e1e261a8-ed23-4fd4-9163-41d87f319dbc"
-Parent: "8f343079-3cc5-4ef7-bc27-32addb46f45e"
+ID: "8f168ea5-ee4c-4ab8-a8c7-bb8436f081b0"
+Parent: "6ad12a84-6889-4974-9cb2-9516d593e1bb"
 Template: "0437fee2-44c9-46a6-abe9-28858d9fee8c"
-Path: /sitecore/templates/Feature/Metadata
+Path: /sitecore/templates/Feature/Navigation/Data
 Languages:
-- Language: en
+- Language: da
   Versions:
   - Version: 1
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20200805T133814Z
+      Value: 20180726T114952Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "725fb6fe-9164-4af6-b903-12fa81e1e8c4"
+      Value: "f23dcdf2-55c9-4de8-9000-71fe136b9bb1"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
-        sitecore\Admin
+        sitecore\unicorn
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20200805T133814Z
+      Value: 20190507T140937Z
