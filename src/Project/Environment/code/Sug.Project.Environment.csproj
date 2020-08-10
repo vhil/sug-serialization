@@ -124,11 +124,6 @@
     <Content Include="App_Config\Include\Environment\SiteDefinitions.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include=".config\dotnet-tools.json" />
-    <Content Include=".sitecore\schemas\ModuleFile.schema.json" />
-    <Content Include=".sitecore\schemas\RootConfigurationFile.schema.json" />
-    <Content Include=".sitecore\schemas\UserConfiguration.schema.json" />
-    <Content Include=".vscode\settings.json" />
     <Content Include="App_Config\Include\xWrap\xWrap.ServicesConfiguration.config" />
     <Content Include="App_Config\Include\xWrap\xWrap.Pipelines.config" />
     <Content Include="App_Config\Include\xWrap\xWrap.Dependencies.config" />
@@ -136,8 +131,6 @@
     <Content Include="App_Config\Include\xWrap\xWrap.Mvc.Pipelines.config" />
     <Content Include="App_Config\Include\xWrap\xWrap.Mvc.Dependencies.config" />
     <None Include="packages.config" />
-    <Content Include="sitecore.example.json" />
-    <Content Include="sitecore.json" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>

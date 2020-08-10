@@ -1,0 +1,14 @@
+{
+  "endpoints": {
+    "default": {
+      "allowWrite": true,
+      "host": "https://sug.demo",
+      "authority": "https://sug.demo.identity",
+      "accessToken": "eyJhbGciOiJSUzI1NiIsImtpZCI6IkE2MjA1QjQzQTgxREU2RDVDQUVCNTdFMDZEQkM3NDRFRUIxREU4ODgiLCJ0eXAiOiJKV1QiLCJ4NXQiOiJwaUJiUTZnZDV0WEs2MWZnYmJ4MFR1c2Q2SWcifQ.eyJuYmYiOjE1OTY4MDQzOTUsImV4cCI6MTU5NjgwNzk5NSwiaXNzIjoiaHR0cHM6Ly9zdWcuZGVtby5pZGVudGl0eSIsImF1ZCI6WyJodHRwczovL3N1Zy5kZW1vLmlkZW50aXR5L3Jlc291cmNlcyIsInNpdGVjb3JlLnByb2ZpbGUuYXBpIl0sImNsaWVudF9pZCI6IkRldmljZSIsInN1YiI6IjU0ZTZkMWE3MGQxMDQwMDdiMDUwNWUzY2VkZDIwY2EwIiwiYXV0aF90aW1lIjoxNTk2NjMwNzkxLCJpZHAiOiJsb2NhbCIsIm5hbWUiOiJzaXRlY29yZVxcQWRtaW4iLCJlbWFpbCI6IiIsImh0dHA6Ly93d3cuc2l0ZWNvcmUubmV0L2lkZW50aXR5L2NsYWltcy9pc0FkbWluIjoiVHJ1ZSIsInNjb3BlIjpbInNpdGVjb3JlLnByb2ZpbGUuYXBpIiwib2ZmbGluZV9hY2Nlc3MiXSwiYW1yIjpbInB3ZCJdfQ.idYGHjU2rmXXwDX1P_TPHs97Z-DgoCcxMeQW9UO3G4erkONuH_EJ7XneEnzeBWMqPpTcC8OIIKdnNqRxUDP28MPvZWTPE41uCv6nvgut-nBinl90g09Zq7Ih0TvubHxrrXKgVQSGgNs6nhmfpBL4YAocRxx_PoLXYFm0HuyErjjpNwa1lQVU2A30v4tx1eyZ6LORGHTpBYzxOOuTiKjmd5wcWqKpzVr6S5b8FDXPou_XMGr3-fwitvozj8j8AtmMFDRNzDqfeaBgTDqiwL3fHWCjjaC3mUzIJgKEBZF8B9WsKPAjQUGCTU4BHNxlf8ExPNuZppXcP5ikz_qvaUzLCQ",
+      "refreshToken": "94e03b39b7966b9684bbb7b8324c1cc78360be06f0725729acb9f55499ae816d",
+      "clientId": "Device",
+      "variables": {}
+    }
+  },
+  "$schema": "./schemas/UserConfiguration.schema.json"
+}
