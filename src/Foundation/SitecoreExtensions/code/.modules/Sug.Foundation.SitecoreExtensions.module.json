@@ -16,8 +16,7 @@
 	"leprechaun": {
 		"configuration": {
 			"@extends": "Sample.Base",
-			"layer": "Foundation",
-			"module": "SitecoreExtensions"
+			"@name": "Foundation.SitecoreExtensions"
 		}
 	}
 }

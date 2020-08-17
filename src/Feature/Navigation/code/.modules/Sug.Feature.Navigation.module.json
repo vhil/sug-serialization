@@ -16,7 +16,7 @@
 	"leprechaun": {
 		"configuration": {
 			"@extends": "Sample.Base",
-			"name": "Feature.Navigation"
+			"@name": "Feature.Navigation"
 		}
 	}
 }

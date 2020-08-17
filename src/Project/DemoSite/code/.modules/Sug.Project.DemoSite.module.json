@@ -16,8 +16,7 @@
 	"leprechaun": {
 		"configuration": {
 			"@extends": "Sample.Base",
-			"layer": "Project",
-			"module": "DemoSite"
+			"@name": "Project.DemoSite"
 		}
 	}
 }
