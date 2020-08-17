@@ -250,3 +250,4 @@ package-lock.json
 
 **/App_Config/Local/*.config
 /src/Project/Environment/code/sitecore.json
+*.scindex

@@ -23,6 +23,12 @@ namespace Sug.Foundation.SitecoreExtensions.SitecoreTemplates
 		}
 
 		/// <summary>
+		/// A wrapped 'checkbox' parameter for field with name 'Checkbox field'.
+		/// <returns><see cref="ICheckboxFieldWrapper"/></returns>
+		/// </summary>
+		public ICheckboxFieldWrapper CheckboxField => this.CheckboxField(FieldNames.CheckboxField);
+
+		/// <summary>
 		/// A wrapped 'droplink' parameter for field with name 'Droplink field'.
 		/// <returns><see cref="ILinkFieldWrapper"/></returns>
 		/// </summary>
@@ -33,6 +39,12 @@ namespace Sug.Foundation.SitecoreExtensions.SitecoreTemplates
 		/// <returns><see cref="IIntegerFieldWrapper"/></returns>
 		/// </summary>
 		public IIntegerFieldWrapper IntegerField => this.IntegerField(FieldNames.IntegerField);
+
+		/// <summary>
+		/// A wrapped 'internal link' parameter for field with name 'Internal link field'.
+		/// <returns><see cref="IInternalLinkFieldWrapper"/></returns>
+		/// </summary>
+		public IInternalLinkFieldWrapper InternalLinkField => this.InternalLinkField(FieldNames.InternalLinkField);
 
 		/// <summary>
 		/// A wrapped 'multilist' parameter for field with name 'Multilist field'.
@@ -54,8 +66,10 @@ namespace Sug.Foundation.SitecoreExtensions.SitecoreTemplates
 
 		public static class FieldNames
 		{
+			public const string CheckboxField = "Checkbox field"; 
 			public const string DroplinkField = "Droplink field"; 
 			public const string IntegerField = "Integer field"; 
+			public const string InternalLinkField = "Internal link field"; 
 			public const string MultilistField = "Multilist field"; 
 			public const string NumberField = "Number field"; 
 			public const string SingleLineTextField = "Single line text field"; 
