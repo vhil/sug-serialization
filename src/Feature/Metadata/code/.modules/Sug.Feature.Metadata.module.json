@@ -12,5 +12,12 @@
 				"path": "/sitecore/layout/Renderings/Feature/Metadata"
 			}
 		]
+	},
+	"leprechaun": {
+		"configuration": {
+			"@extends": "Sample.Base",
+			"layer": "Feature",
+			"module": "Metadata"
+		}
 	}
 }

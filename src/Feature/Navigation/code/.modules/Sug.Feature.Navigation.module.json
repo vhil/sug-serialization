@@ -12,5 +12,11 @@
 				"path": "/sitecore/layout/Renderings/Feature/Navigation"
 			}
 		]
+	},
+	"leprechaun": {
+		"configuration": {
+			"@extends": "Sample.Base",
+			"name": "Feature.Navigation"
+		}
 	}
 }

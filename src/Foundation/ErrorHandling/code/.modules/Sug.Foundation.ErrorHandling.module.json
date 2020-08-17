@@ -12,5 +12,12 @@
 				"path": "/sitecore/layout/Renderings/Foundation/ErrorHandling"
 			}
 		]
+	},
+	"leprechaun": {
+		"configuration": {
+			"@extends": "Sample.Base",
+			"layer": "Foundation",
+			"module": "ErrorHandling"
+		}
 	}
 }

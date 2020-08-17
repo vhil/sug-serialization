@@ -12,5 +12,12 @@
 				"path": "/sitecore/layout/Renderings/Foundation/SitecoreExtensions"
 			}
 		]
+	},
+	"leprechaun": {
+		"configuration": {
+			"@extends": "Sample.Base",
+			"layer": "Foundation",
+			"module": "SitecoreExtensions"
+		}
 	}
 }

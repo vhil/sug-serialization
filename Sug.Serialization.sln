@@ -10,10 +10,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".solution files", ".solutio
 		gulpfile.config.Debug.Example.json = gulpfile.config.Debug.Example.json
 		gulpfile.config.Debug.json = gulpfile.config.Debug.json
 		gulpfile.js = gulpfile.js
+		src\Leprechaun.config = src\Leprechaun.config
 		NuGet.config = NuGet.config
 		package.json = package.json
 		sitecore.json = sitecore.json
-		codegen\xWrapCodeGeneration.tt = codegen\xWrapCodeGeneration.tt
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Project", "Project", "{A81443C3-FFEC-4C47-8FE7-7EEF0D88B553}"
@@ -45,6 +45,12 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DemoSite", "DemoSite", "{5EE7DE37-951B-465B-8FA0-50971FDF2427}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sug.Project.DemoSite", "src\Project\DemoSite\code\Sug.Project.DemoSite.csproj", "{63FA7139-26B1-43DB-8767-B81A28AEE4FA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".codegen", ".codegen", "{22564C86-1E01-446C-AACF-A45508A53741}"
+	ProjectSection(SolutionItems) = preProject
+		codegen\Syntesis.csx = codegen\Syntesis.csx
+		codegen\xWrapCodeGeneration.tt = codegen\xWrapCodeGeneration.tt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

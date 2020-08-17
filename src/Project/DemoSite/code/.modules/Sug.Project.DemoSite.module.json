@@ -12,5 +12,12 @@
 				"path": "/sitecore/layout/Renderings/Project/DemoSite"
 			}
 		]
+	},
+	"leprechaun": {
+		"configuration": {
+			"@extends": "Sample.Base",
+			"layer": "Project",
+			"module": "DemoSite"
+		}
 	}
 }
