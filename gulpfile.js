@@ -9,6 +9,7 @@ var path = require('path');
 var zip = require('gulp-zip');
 var entityconvert = require('gulp-entity-convert');
 var color = require('gulp-color');
+var exec = require('child_process').exec;
 
 var config;
 var dest;
@@ -100,5 +101,13 @@ function loadConfiguration(configurationName) {
 
 gulp.task("build:Debug", function (cb) {
 	loadConfiguration('Debug');
-	return runSequence('_clean-before', '_publish-website', '_copy-other-files', cb);
+	return runSequence('_clean-before', '_code-generation', '_publish-website', '_copy-other-files', cb);
 });
+
+gulp.task('_code-generation', function (cb) {
+	exec('dotnet leprechaun /c .\\src\\Leprechaun.config', function (err, stdout, stderr) {
+		console.log(stdout);
+		console.log(stderr);
+		cb(err);
+	});
+})
