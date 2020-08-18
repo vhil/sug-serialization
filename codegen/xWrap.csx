@@ -13,6 +13,8 @@ public string RenderTemplates()
 		if (IsRenderingParameters(template))
 		{
 			localCode.AppendLine($@"
+#region {template.Path}
+
 namespace {ConfigurationName}.SitecoreTemplates
 {{
 	/// <summary>
@@ -31,11 +33,15 @@ namespace {ConfigurationName}.SitecoreTemplates
 		{{{RenderFieldNames(template)}
 		}}
 	}}
-}}");
+}}
+
+#endregion");
 		}
 		else
 		{
 			localCode.AppendLine($@"
+#region {template.Path}
+
 namespace {ConfigurationName}.SitecoreTemplates
 {{
     /// <summary>
@@ -67,7 +73,9 @@ namespace {ConfigurationName}.SitecoreTemplates
 		{{{RenderFieldIds(template)}
 		}}
 	}}
-}}");
+}}
+
+#endregion");
 		}
 	}
 
@@ -82,7 +90,6 @@ using global::System.CodeDom.Compiler;
 using global::Xwrap;
 using global::Xwrap.FieldWrappers.Abstractions;
 using global::Xwrap.Mvc.RenderingParameters;
-
 {RenderTemplates()}
 ");
 
@@ -90,11 +97,11 @@ public bool IsRenderingParameters(TemplateCodeGenerationMetadata template)
 {
 	if (template.BaseTemplates.Any())
 	{
-		Log.Debug($"Base templates for {template.Name} are: {string.Join(", ", template.BaseTemplates.Select(x => x.Name))}");
+		Log.Debug($"Base templates for '{template.Name}' are: {string.Join(", ", template.BaseTemplates.Select(x => x.Name))}");
 	}
 	else
 	{
-		Log.Debug($"No base templates found for template {template.Name}");
+		Log.Debug($"No base templates found for template '{template.Name}'");
 	}
 
 	return template.BaseTemplates.Any(x => x.Id == new Guid("{8CA06D6A-B353-44E8-BC31-B528C7306971}"));

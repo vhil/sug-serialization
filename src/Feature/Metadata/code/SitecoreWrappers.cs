@@ -7,6 +7,7 @@ using global::Xwrap;
 using global::Xwrap.FieldWrappers.Abstractions;
 using global::Xwrap.Mvc.RenderingParameters;
 
+#region /sitecore/templates/Feature/Metadata/_Metadata
 
 namespace Feature.Metadata.SitecoreTemplates
 {
@@ -48,5 +49,7 @@ namespace Feature.Metadata.SitecoreTemplates
 		}
 	}
 }
+
+#endregion
 
 

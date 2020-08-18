@@ -7,6 +7,7 @@ using global::Xwrap;
 using global::Xwrap.FieldWrappers.Abstractions;
 using global::Xwrap.Mvc.RenderingParameters;
 
+#region /sitecore/templates/Foundation/SitecoreExtensions/Data/Test parameters template
 
 namespace Foundation.SitecoreExtensions.SitecoreTemplates
 {
@@ -96,6 +97,10 @@ namespace Foundation.SitecoreExtensions.SitecoreTemplates
 		}
 	}
 }
+
+#endregion
+
+#region /sitecore/templates/Foundation/SitecoreExtensions/Data/Test template
 
 namespace Foundation.SitecoreExtensions.SitecoreTemplates
 {
@@ -346,6 +351,10 @@ namespace Foundation.SitecoreExtensions.SitecoreTemplates
 	}
 }
 
+#endregion
+
+#region /sitecore/templates/Foundation/SitecoreExtensions/Data/_Test base template
+
 namespace Foundation.SitecoreExtensions.SitecoreTemplates
 {
     /// <summary>
@@ -386,5 +395,7 @@ namespace Foundation.SitecoreExtensions.SitecoreTemplates
 		}
 	}
 }
+
+#endregion
 
 

@@ -97,17 +97,9 @@
   <ItemGroup>
     <Compile Include="Configuration\ServicesConfigurator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SitecoreWrappers.cs" />
     <Content Include="App_Config\Include\Foundation\Sug.Foundation.ErrorHandling\DependencyInjection.config" />
-    <Compile Include="xWrapSitecoreTemplates.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>xWrapSitecoreTemplates.tt</DependentUpon>
-    </Compile>
     <Content Include=".modules\Sug.Foundation.ErrorHandling.module.json" />
-    <Content Include="xWrapSitecoreTemplates.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>xWrapSitecoreTemplates.cs</LastGenOutput>
-    </Content>
     <None Include="web.config" />
   </ItemGroup>
   <PropertyGroup>

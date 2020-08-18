@@ -7,6 +7,7 @@ using global::Xwrap;
 using global::Xwrap.FieldWrappers.Abstractions;
 using global::Xwrap.Mvc.RenderingParameters;
 
+#region /sitecore/templates/Feature/Navigation/Data/_Navigation
 
 namespace Feature.Navigation.SitecoreTemplates
 {
@@ -64,5 +65,7 @@ namespace Feature.Navigation.SitecoreTemplates
 		}
 	}
 }
+
+#endregion
 
 
