@@ -49,7 +49,6 @@ namespace Feature.Navigation.SitecoreTemplates
 		/// </summary>
 		public ICheckboxFieldWrapper ShowInNavigation => this.WrapField<ICheckboxFieldWrapper>(FieldNames.ShowInNavigation);
 		
-
 		public struct FieldNames
 		{
 			public const string NavigationTitle = "Navigation title";

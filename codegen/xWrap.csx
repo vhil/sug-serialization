@@ -27,7 +27,6 @@ namespace {ConfigurationName}.SitecoreTemplates
 		{{
 		}}
 		{RenderParametersFields(template)}
-
 		public struct FieldNames
 		{{{RenderFieldNames(template)}
 		}}
@@ -60,7 +59,6 @@ namespace {ConfigurationName}.SitecoreTemplates
 			public const string TemplateIdString = ""{template.Id.ToString("B").ToUpper()}""; 
 		}}
 		{RenderItemFields(template)}
-
 		public struct FieldNames
 		{{{RenderFieldNames(template)}
 		}}
@@ -90,9 +88,13 @@ using global::Xwrap.Mvc.RenderingParameters;
 
 public bool IsRenderingParameters(TemplateCodeGenerationMetadata template)
 {
-	foreach (var t in template.BaseTemplates)
+	if (template.BaseTemplates.Any())
 	{
-		Log.Debug($"Base template: {t.Name} - {t.Id}");
+		Log.Debug($"Base templates for {template.Name} are: {string.Join(", ", template.BaseTemplates.Select(x => x.Name))}");
+	}
+	else
+	{
+		Log.Debug($"No base templates found for template {template.Name}");
 	}
 
 	return template.BaseTemplates.Any(x => x.Id == new Guid("{8CA06D6A-B353-44E8-BC31-B528C7306971}"));

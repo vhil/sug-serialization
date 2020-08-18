@@ -37,7 +37,6 @@ namespace Feature.Metadata.SitecoreTemplates
 		/// </summary>
 		public ITextFieldWrapper MetaTitle => this.WrapField<ITextFieldWrapper>(FieldNames.MetaTitle);
 		
-
 		public struct FieldNames
 		{
 			public const string MetaTitle = "Meta title";

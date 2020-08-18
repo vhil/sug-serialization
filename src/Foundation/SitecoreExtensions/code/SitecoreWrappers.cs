@@ -73,7 +73,6 @@ namespace Foundation.SitecoreExtensions.SitecoreTemplates
 		/// </summary>
 		public ITextFieldWrapper SingleLineTextField => this.WrapField<ITextFieldWrapper>(FieldNames.SingleLineTextField);
 		
-
 		public struct FieldNames
 		{
 			public const string CheckboxField = "Checkbox field";
@@ -283,7 +282,6 @@ namespace Foundation.SitecoreExtensions.SitecoreTemplates
 		/// </summary>
 		public ITextFieldWrapper VersionLink => this.WrapField<ITextFieldWrapper>(FieldNames.VersionLink);
 		
-
 		public struct FieldNames
 		{
 			public const string CheckboxField = "Checkbox field";
@@ -377,7 +375,6 @@ namespace Foundation.SitecoreExtensions.SitecoreTemplates
 		/// </summary>
 		public ITextFieldWrapper BaseSingleLineTextField => this.WrapField<ITextFieldWrapper>(FieldNames.BaseSingleLineTextField);
 		
-
 		public struct FieldNames
 		{
 			public const string BaseSingleLineTextField = "Base single line text field";
