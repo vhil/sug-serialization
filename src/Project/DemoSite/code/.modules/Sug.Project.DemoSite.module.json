@@ -15,7 +15,7 @@
 	},
 	"leprechaun": {
 		"configuration": {
-			"@extends": "Sample.Base",
+			"@extends": "xWrap.Base",
 			"@name": "Project.DemoSite"
 		}
 	}

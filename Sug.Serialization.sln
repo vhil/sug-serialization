@@ -48,7 +48,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sug.Project.DemoSite", "src
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".codegen", ".codegen", "{22564C86-1E01-446C-AACF-A45508A53741}"
 	ProjectSection(SolutionItems) = preProject
-		codegen\Syntesis.csx = codegen\Syntesis.csx
+		codegen\Synthesis.csx = codegen\Synthesis.csx
+		codegen\xWrap.csx = codegen\xWrap.csx
 		codegen\xWrapCodeGeneration.tt = codegen\xWrapCodeGeneration.tt
 	EndProjectSection
 EndProject
