@@ -366,9 +366,9 @@ namespace Foundation.SitecoreExtensions.SitecoreTemplates
     [TemplateId(Constants.TemplateIdString)]
     // ReSharper disable once InconsistentNaming
 	// ReSharper disable once PartialTypeWithSinglePart
-	public partial class TestBaseTemplateItem : ItemWrapper
+	public partial class _TestBaseTemplateItem : ItemWrapper
 	{
-		public TestBaseTemplateItem(Item item) : base(item)
+		public _TestBaseTemplateItem(Item item) : base(item)
 		{
 		}
 

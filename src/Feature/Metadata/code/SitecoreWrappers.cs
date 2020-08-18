@@ -20,9 +20,9 @@ namespace Feature.Metadata.SitecoreTemplates
     [TemplateId(Constants.TemplateIdString)]
     // ReSharper disable once InconsistentNaming
 	// ReSharper disable once PartialTypeWithSinglePart
-	public partial class MetadataItem : ItemWrapper
+	public partial class _MetadataItem : ItemWrapper
 	{
-		public MetadataItem(Item item) : base(item)
+		public _MetadataItem(Item item) : base(item)
 		{
 		}
 

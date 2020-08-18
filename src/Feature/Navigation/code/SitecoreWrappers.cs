@@ -20,9 +20,9 @@ namespace Feature.Navigation.SitecoreTemplates
     [TemplateId(Constants.TemplateIdString)]
     // ReSharper disable once InconsistentNaming
 	// ReSharper disable once PartialTypeWithSinglePart
-	public partial class NavigationItem : ItemWrapper
+	public partial class _NavigationItem : ItemWrapper
 	{
-		public NavigationItem(Item item) : base(item)
+		public _NavigationItem(Item item) : base(item)
 		{
 		}
 
