@@ -95,16 +95,15 @@ using global::Xwrap.Mvc.RenderingParameters;
 
 public bool IsRenderingParameters(TemplateCodeGenerationMetadata template)
 {
-	if (template.BaseTemplates.Any())
+	var isParametersTemplate = template.TemplateInfo.BaseTemplateIds
+		.Any(x => x == new Guid("{8CA06D6A-B353-44E8-BC31-B528C7306971}"));
+
+	if (isParametersTemplate)
 	{
-		Log.Debug($"Base templates for '{template.Name}' are: {string.Join(", ", template.BaseTemplates.Select(x => x.Name))}");
-	}
-	else
-	{
-		Log.Debug($"No base templates found for template '{template.Name}'");
+		Log.Debug($"'{template.Name}' is inherited from standard rendering parameters");
 	}
 
-	return template.TemplateInfo.BaseTemplateIds.Any(x => x == new Guid("{8CA06D6A-B353-44E8-BC31-B528C7306971}"));
+	return isParametersTemplate;
 }
 
 public string RenderFieldNames(TemplateCodeGenerationMetadata template)
