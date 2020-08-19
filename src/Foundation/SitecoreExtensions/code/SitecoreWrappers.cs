@@ -11,68 +11,59 @@ using global::Xwrap.Mvc.RenderingParameters;
 
 namespace Foundation.SitecoreExtensions.SitecoreTemplates
 {
-    /// <summary>
-	/// Item wrapper for items of template 'Test parameters template'.
+	/// <summary>
+	/// Rendering parameters wrapper for template 'Test parameters template'.
 	/// Template ID: {CB56320C-774A-4508-926F-4300E36C627C}.
 	/// Template path: /sitecore/templates/Foundation/SitecoreExtensions/Data/Test parameters template.
 	/// </summary>
 	[GeneratedCode("Leprechaun", "2.0.1")]
-    [TemplateId(Constants.TemplateIdString)]
-    // ReSharper disable once InconsistentNaming
-	// ReSharper disable once PartialTypeWithSinglePart
-	public partial class TestParametersTemplateItem : ItemWrapper
+	public partial class TestParametersTemplate : RenderingParametersWrapper
 	{
-		public TestParametersTemplateItem(Item item) : base(item)
+		public TestParametersTemplate(RenderingParameters parameters) : base(parameters)
 		{
-		}
-
-		public static class Constants
-		{
-			public static readonly TemplateID TemplateId = new TemplateID(new ID(TemplateIdString));
-			public const string TemplateIdString = "{CB56320C-774A-4508-926F-4300E36C627C}"; 
 		}
 		
 		/// <summary>
-		/// A wrapped "Checkbox" field for item field with name: "Checkbox field".
+		/// A wrapped "Checkbox" parameter for field with name "Checkbox field".
 		/// <returns><see cref="ICheckboxFieldWrapper"/></returns>
 		/// </summary>
-		public ICheckboxFieldWrapper CheckboxField => this.WrapField<ICheckboxFieldWrapper>(FieldNames.CheckboxField);
+		public ICheckboxFieldWrapper CheckboxField => this.CheckboxField(FieldNames.CheckboxField);
 		
 		/// <summary>
-		/// A wrapped "Droplink" field for item field with name: "Droplink field".
+		/// A wrapped "Droplink" parameter for field with name "Droplink field".
 		/// <returns><see cref="ILinkFieldWrapper"/></returns>
 		/// </summary>
-		public ILinkFieldWrapper DroplinkField => this.WrapField<ILinkFieldWrapper>(FieldNames.DroplinkField);
+		public ILinkFieldWrapper DroplinkField => this.LinkField(FieldNames.DroplinkField);
 		
 		/// <summary>
-		/// A wrapped "Integer" field for item field with name: "Integer field".
+		/// A wrapped "Integer" parameter for field with name "Integer field".
 		/// <returns><see cref="IIntegerFieldWrapper"/></returns>
 		/// </summary>
-		public IIntegerFieldWrapper IntegerField => this.WrapField<IIntegerFieldWrapper>(FieldNames.IntegerField);
+		public IIntegerFieldWrapper IntegerField => this.IntegerField(FieldNames.IntegerField);
 		
 		/// <summary>
-		/// A wrapped "Internal Link" field for item field with name: "Internal link field".
+		/// A wrapped "Internal Link" parameter for field with name "Internal link field".
 		/// <returns><see cref="IInternalLinkFieldWrapper"/></returns>
 		/// </summary>
-		public IInternalLinkFieldWrapper InternalLinkField => this.WrapField<IInternalLinkFieldWrapper>(FieldNames.InternalLinkField);
+		public IInternalLinkFieldWrapper InternalLinkField => this.InternalLinkField(FieldNames.InternalLinkField);
 		
 		/// <summary>
-		/// A wrapped "Multilist" field for item field with name: "Multilist field".
+		/// A wrapped "Multilist" parameter for field with name "Multilist field".
 		/// <returns><see cref="IListFieldWrapper"/></returns>
 		/// </summary>
-		public IListFieldWrapper MultilistField => this.WrapField<IListFieldWrapper>(FieldNames.MultilistField);
+		public IListFieldWrapper MultilistField => this.ListField(FieldNames.MultilistField);
 		
 		/// <summary>
-		/// A wrapped "Number" field for item field with name: "Number field".
+		/// A wrapped "Number" parameter for field with name "Number field".
 		/// <returns><see cref="INumberFieldWrapper"/></returns>
 		/// </summary>
-		public INumberFieldWrapper NumberField => this.WrapField<INumberFieldWrapper>(FieldNames.NumberField);
+		public INumberFieldWrapper NumberField => this.NumberField(FieldNames.NumberField);
 		
 		/// <summary>
-		/// A wrapped "Single-Line Text" field for item field with name: "Single line text field".
+		/// A wrapped "Single-Line Text" parameter for field with name "Single line text field".
 		/// <returns><see cref="ITextFieldWrapper"/></returns>
 		/// </summary>
-		public ITextFieldWrapper SingleLineTextField => this.WrapField<ITextFieldWrapper>(FieldNames.SingleLineTextField);
+		public ITextFieldWrapper SingleLineTextField => this.TextField(FieldNames.SingleLineTextField);
 		
 		public struct FieldNames
 		{
@@ -83,17 +74,6 @@ namespace Foundation.SitecoreExtensions.SitecoreTemplates
 			public const string MultilistField = "Multilist field";
 			public const string NumberField = "Number field";
 			public const string SingleLineTextField = "Single line text field";
-		}
-
-		public struct FieldIds
-		{
-			public static ID CheckboxField => new ID("{B8B91789-7070-4B44-8D52-7205BDFE8F7E}");
-			public static ID DroplinkField => new ID("{9FDA7450-8C77-493E-BEE7-C34DAF1D56EC}");
-			public static ID IntegerField => new ID("{489831D2-6CA7-4A28-9B22-F0E05CC00461}");
-			public static ID InternalLinkField => new ID("{29C22D6E-B109-40C5-AC50-5043B3C289A4}");
-			public static ID MultilistField => new ID("{037F1EAD-F700-4024-A7A4-300002419A9F}");
-			public static ID NumberField => new ID("{800089F5-20F5-4401-BCEE-C188CD0F5BBE}");
-			public static ID SingleLineTextField => new ID("{B124C661-363F-4874-9F59-3D2FFB5E159E}");
 		}
 	}
 }
