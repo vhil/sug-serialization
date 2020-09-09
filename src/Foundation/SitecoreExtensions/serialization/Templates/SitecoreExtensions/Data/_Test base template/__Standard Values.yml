@@ -19,13 +19,16 @@ Languages:
       Hint: __Created by
       Value: |
         sitecore\Admin
+    - ID: "781fb4a6-93d9-4723-9cad-91e200db3c9c"
+      Hint: Base single line text field
+      Value: $name
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "33c48d13-2c30-4540-b025-2cfa41f7dbc6"
+      Value: "39f92550-1c8f-4f23-911b-69e4081d5785"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\Admin
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20200818T095425Z
+      Value: 20200909T141429Z
