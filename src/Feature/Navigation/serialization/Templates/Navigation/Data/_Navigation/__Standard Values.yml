@@ -15,6 +15,10 @@ Languages:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20180726T115045Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |
@@ -22,22 +26,13 @@ Languages:
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
       Value: "4a1a0b8b-ac13-4610-977e-2327b6178e56"
-    - ID: "9376bcca-6d11-4506-a601-e75aa509afd3"
-      Hint: Show in breadcrumbs
-      Value: 1
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\unicorn
-    - ID: "ca349367-5b39-4f87-8a6c-ad8b987191d9"
-      Hint: Navigation title
-      Value: $name
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
       Value: 20190507T140953Z
-    - ID: "ffe61cdc-6969-4040-b801-e988695c16a0"
-      Hint: Show in navigation
-      Value: 1
 - Language: en
   Versions:
   - Version: 1
@@ -45,6 +40,10 @@ Languages:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20180728T105246Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |
@@ -52,19 +51,10 @@ Languages:
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
       Value: "c42cc423-0fcb-4d48-8c74-15aa150821aa"
-    - ID: "9376bcca-6d11-4506-a601-e75aa509afd3"
-      Hint: Show in breadcrumbs
-      Value: 1
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\unicorn
-    - ID: "ca349367-5b39-4f87-8a6c-ad8b987191d9"
-      Hint: Navigation title
-      Value: $name
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
       Value: 20190507T140953Z
-    - ID: "ffe61cdc-6969-4040-b801-e988695c16a0"
-      Hint: Show in navigation
-      Value: 1
