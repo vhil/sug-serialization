@@ -1,10 +1,10 @@
 ﻿# Do not commit this file to source control or modify it. It is safe to delete; it will recreate itself.
 ---
 File: |
-  D:\Projects\SUGDK\sug-serialization\src\Foundation\ErrorHandling\serialization\Renderings\ErrorHandling.yml
+  C:\Projects\SUG\sug-serialization\src\Foundation\ErrorHandling\serialization\Renderings\ErrorHandling.yml
 ID: "1597ccfa-2e89-4138-b74a-d3c63f1ed01a"
 Parent: "180d4942-2b10-4375-bc06-e0d94220a68f"
 Template: "7ee0975b-0698-493e-b3a2-0b2ef33d0522"
 Path: /sitecore/layout/Renderings/Foundation/ErrorHandling
 Signature: PdZtaLBqIIUNEyOiSFrUrrcwcceghnPUW9a4qHjn8Hk=
-Modified: 637323171848720498
+Modified: 637323171860000000

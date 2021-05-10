@@ -252,3 +252,4 @@ package-lock.json
 /src/Project/Environment/code/sitecore.json
 *.scindex
 .sitecore/user.json
+.sitecore/
