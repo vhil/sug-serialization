@@ -11,3 +11,5 @@ dotnet sitecore plugin add -n Sitecore.DevEx.Extensibility.Publishing
 dotnet sitecore plugin add -n Sitecore.DevEx.Extensibility.Serialization
 
 dotnet sitecore login --authority https://demo101.identity --cm https://demo101.sc --allow-write true
+
+dotnet leprechaun /c .\src\Leprechaun.config
