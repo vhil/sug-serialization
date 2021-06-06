@@ -333,49 +333,4 @@ namespace Foundation.SitecoreExtensions.SitecoreTemplates
 
 #endregion
 
-#region /sitecore/templates/Foundation/SitecoreExtensions/Data/_Test base template
-
-namespace Foundation.SitecoreExtensions.SitecoreTemplates
-{
-    /// <summary>
-	/// Item wrapper for items of template '_Test base template'.
-	/// Template ID: {B2DFC963-E803-488C-8102-30B4073BB865}.
-	/// Template path: /sitecore/templates/Foundation/SitecoreExtensions/Data/_Test base template.
-	/// </summary>
-	[GeneratedCode("Leprechaun", "2.0.1")]
-    [TemplateId(Constants.TemplateIdString)]
-    // ReSharper disable once InconsistentNaming
-	// ReSharper disable once PartialTypeWithSinglePart
-	public partial class _TestBaseTemplateItem : ItemWrapper
-	{
-		public _TestBaseTemplateItem(Item item) : base(item)
-		{
-		}
-
-		public static class Constants
-		{
-			public static readonly TemplateID TemplateId = new TemplateID(new ID(TemplateIdString));
-			public const string TemplateIdString = "{B2DFC963-E803-488C-8102-30B4073BB865}"; 
-		}
-		
-		/// <summary>
-		/// A wrapped "Single-Line Text" field for item field with name: "Base single line text field".
-		/// <returns><see cref="ITextFieldWrapper"/></returns>
-		/// </summary>
-		public ITextFieldWrapper BaseSingleLineTextField => this.WrapField<ITextFieldWrapper>(FieldNames.BaseSingleLineTextField);
-		
-		public struct FieldNames
-		{
-			public const string BaseSingleLineTextField = "Base single line text field";
-		}
-
-		public struct FieldIds
-		{
-			public static ID BaseSingleLineTextField => new ID("{781FB4A6-93D9-4723-9CAD-91E200DB3C9C}");
-		}
-	}
-}
-
-#endregion
-
 

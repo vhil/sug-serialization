@@ -33,6 +33,12 @@ namespace Feature.Metadata.SitecoreTemplates
 		}
 		
 		/// <summary>
+		/// A wrapped "Single-Line Text" field for item field with name: "Meta description".
+		/// <returns><see cref="ITextFieldWrapper"/></returns>
+		/// </summary>
+		public ITextFieldWrapper MetaDescription => this.WrapField<ITextFieldWrapper>(FieldNames.MetaDescription);
+		
+		/// <summary>
 		/// A wrapped "Single-Line Text" field for item field with name: "Meta title".
 		/// <returns><see cref="ITextFieldWrapper"/></returns>
 		/// </summary>
@@ -40,11 +46,13 @@ namespace Feature.Metadata.SitecoreTemplates
 		
 		public struct FieldNames
 		{
+			public const string MetaDescription = "Meta description";
 			public const string MetaTitle = "Meta title";
 		}
 
 		public struct FieldIds
 		{
+			public static ID MetaDescription => new ID("{E83AF5C1-D134-4FEC-82F2-1254A3424F95}");
 			public static ID MetaTitle => new ID("{AB300DB7-3D19-4E2F-BF52-4BF0B892ABC2}");
 		}
 	}
