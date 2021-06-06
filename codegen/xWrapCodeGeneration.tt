@@ -1,4 +1,4 @@
-﻿<#@ assembly name="%UserProfile%\.nuget\packages\sitecore.kernel\10.0.0\lib\net48\Sitecore.Kernel.dll" #>
+﻿<#@ assembly name="%UserProfile%\.nuget\packages\sitecore.kernel\10.1.0\lib\net48\Sitecore.Kernel.dll" #>
 <#@ assembly name="System.Core" #>
 <#@ assembly name="System.Core" #>
 <#@ assembly name="System.Xml" #>

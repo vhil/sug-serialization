@@ -1,5 +1,5 @@
 {
-	"websiteRoot": "D:\\Projects\\SUGDK\\wwwroot\\sug.demo",
+	"websiteRoot": "C:\\Sitecore\\wwwroot\\demo101.sc",
 	"buildConfiguration": "Debug",
 	"runCleanBuilds": false,
 	"projects": [
